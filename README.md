@@ -1,6 +1,6 @@
 # Postfix and Dovecot Email Server
 
-This Docker image sets up a simple email server with Postfix and Dovecot. It allows you to easily deploy an email server for your domain. Imap is not configured. Just pop3 and stmp.
+This Docker image sets up a simple email server with Postfix and Dovecot. It allows you to easily deploy an email server for your domain. Imap is not configured. Just pop3 and smtp.
 
 ## Configuration Parameters
 
