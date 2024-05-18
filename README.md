@@ -1,6 +1,6 @@
 # Postfix and Dovecot Email Server
 
-This Docker image sets up a simple email server with Postfix and Dovecot. It allows you to easily deploy an email server for your domain.
+This Docker image sets up a simple email server with Postfix and Dovecot. It allows you to easily deploy an email server for your domain. Imap is not configured. Just pop3 and stmp.
 
 ## Configuration Parameters
 
@@ -12,12 +12,20 @@ This Docker image sets up a simple email server with Postfix and Dovecot. It all
 
 - Use this parameter to create email users. The format is `<user>:<password>`. To add multiple users, separate each user/password pair with a semicolon `;`. For example, `<user1>:<password1>;<user2>:<password2>`.
 
+### `SMTP_PORT`
+
+- Smtp port. Default: 25.
+
+### `POP3_PORT`
+
+- Pop3 port. Default: 110.
+
 ## How to Use
 
 ### 1. Run the Docker Container
 
 ```bash
-docker run -d -p 25:25 -p 587:587 -p 993:993 -e SERVER_HOSTNAME=example.com -e AUTH="user1:password1;user2:password2" email-server
+docker run -d -p 25:25 -p 110:110 -e SERVER_HOSTNAME=example.com -e AUTH="user1:password1;user2:password2" email-server
 ```
 
 Replace `"example.com"` with your domain name and `"user1:password1;user2:password2"` with your desired email users and passwords.

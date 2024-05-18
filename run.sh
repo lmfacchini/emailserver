@@ -45,6 +45,13 @@ add_config_value "inet_interfaces" "all"
 add_config_value "alias_maps" "hash:/etc/aliases"
 add_config_value "alias_database" "hash:/etc/aliases"
 
+if [ -n "${SMTP_PORT}" ]; then
+    add_config_value "smtpd_port" "$SMTP_PORT"
+else
+
+if [ -n "${POP3_PORT}" ]; then
+    echo "port = $POP3_PORT" >> /etc/dovecot/dovecot.conf
+else
 
 
 add_config_value "maillog_file" "/dev/stdout"
