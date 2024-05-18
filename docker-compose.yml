@@ -1,0 +1,11 @@
+
+services:
+  postfix:
+    image: emailserver
+    container_name: emailserver
+    environment:
+      SERVER_HOSTNAME: "example.com"
+      AUTH: "example:example;example1:example1"
+    ports:
+      - "25:25"
+      - "110:110"
