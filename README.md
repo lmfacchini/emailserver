@@ -1,3 +1,5 @@
+# Postfix and Dovecot Email Server
+
 This Docker image sets up a simple email server with Postfix and Dovecot. It allows you to easily deploy an email server for your domain.
 
 ## Configuration Parameters
