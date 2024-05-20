@@ -47,11 +47,12 @@ add_config_value "alias_database" "hash:/etc/aliases"
 
 if [ -n "${SMTP_PORT}" ]; then
     add_config_value "smtpd_port" "$SMTP_PORT"
-else
+fi
 
 if [ -n "${POP3_PORT}" ]; then
     echo "port = $POP3_PORT" >> /etc/dovecot/dovecot.conf
-else
+fi
+
 
 
 add_config_value "maillog_file" "/dev/stdout"
