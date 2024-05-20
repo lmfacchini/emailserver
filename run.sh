@@ -64,6 +64,5 @@ add_config_value "mynetworks" "0.0.0.0/0"
 echo 'nameserver 8.8.8.8' >> /var/spool/postfix/etc/resolv.conf
 echo 'nameserver 8.8.8.8' >> /etc/resolv.conf 
 
-(exec /usr/sbin/postfix -c /etc/postfix start-fg &) && (/usr/sbin/dovecot -F &) >> /var/log/mail.log 2>&1
-tail -f /var/log/mail.log
+exec /usr/sbin/postfix -c /etc/postfix start-fg & /usr/sbin/dovecot -F
 
